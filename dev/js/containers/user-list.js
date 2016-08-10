@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {selectUser} from '../action/index'
 
 class UserList extends Component{
-  createListItems(){
+  renderList(){
     return this.props.users.map((user) => {
       return (
         <li
@@ -19,7 +19,7 @@ class UserList extends Component{
   render(){
     return(
       <ul>
-        {this.createListItems()}
+        {this.renderList()}
       </ul>
     )
   }
@@ -30,8 +30,12 @@ function mapStateToProps(state) {
     users: state.users
   }
 }
-function matchDispatchToProps(dispatch) {
-  return bindActionCreators({selectUser: selectUser}, dispatch)
+// Get actions and pass them as props to to UserList
+//      > now UserList has this.props.selectUser
+function matchDispatchToProps(dispatch){
+    return bindActionCreators({selectUser: selectUser}, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps )(UserList)
+// We don't want to return the plain UserList (component) anymore, we want to return the smart Container
+//      > UserList is now aware of state and actions
+export default connect(mapStateToProps, matchDispatchToProps)(UserList);
