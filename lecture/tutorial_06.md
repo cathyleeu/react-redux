@@ -1,3 +1,5 @@
+# React JS / Redux Tutorial - 6 - Provider
+
 전 과정에서  store에는 3명의 유저가 있다.
 이제 우리가 해야 할 것은
 we need to figure out how to take this store and pass the data along to our components
@@ -61,4 +63,5 @@ ReactDOM.render(
 
 
 ```
-이렇게 하면 provider을 통해서 store의 데이터와 components가 연결된다. 
+이렇게 하면 provider을 통해서 store의 데이터와 components가 연결된다.
+pass to application

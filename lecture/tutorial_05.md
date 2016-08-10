@@ -1,3 +1,5 @@
+# React JS / Redux Tutorial - 5 - Reducers
+
 store은 one big javasctipt 이다.
 
 사용자, 영화, 음악 리스트를 가지고 있다.
